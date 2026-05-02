@@ -716,10 +716,9 @@ footer .hi{color:var(--cyan)}
 </section>
 
 <footer>
-  <span class="hi">&lt;</span> Made with &#10084; by <span class="hi">Shalimar N. Mangorsi</span> <span class="hi">/&gt;</span> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2025
+  <span class="hi">&lt;</span>  &#10084; by <span class="hi">Shalimar N. Mangorsi</span> <span class="hi">/&gt;</span> &nbsp;&nbsp;·&nbsp;&nbsp; &copy; 2026
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lb">
   <button class="lb-x" id="lbX">&times;</button>
   <img src="" alt="" id="lbImg">
@@ -727,29 +726,28 @@ footer .hi{color:var(--cyan)}
 </div>
 
 <script>
-// Nav scroll
+
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
 
-// Hamburger
+// 
 const ham=document.getElementById('ham');
 const nl=document.getElementById('navLinks');
 ham.addEventListener('click',()=>nl.classList.toggle('open'));
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
 
-// Reveal
+
 const ro=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('up');ro.unobserve(e.target);}});
 },{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
-// Skill bars
+
 const so=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(b=>b.style.width=b.dataset.w);so.unobserve(e.target);}});
 },{threshold:.2});
 so.observe(document.getElementById('skills'));
 
-// Lightbox
 const lb=document.getElementById('lb');
 const lbImg=document.getElementById('lbImg');
 const lbCap=document.getElementById('lbCap');
